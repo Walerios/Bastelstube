@@ -1,6 +1,6 @@
 package de.hs_mannheim.imb.ss14.tpe.grp6.testat2.charaktere;
 
-public class Lich extends Undead {
+public class Lich extends Undead implements Hero,Fighter{
     
     private String name = "Lich" ;
     private Element element = Element.WATER;
@@ -17,7 +17,18 @@ public class Lich extends Undead {
         
     }
     
-    public void HeroFight(){
+    
+    
+    @Override
+    public void heroFight(){
         
     }
+    
+    @Override
+    public void fight() {
+        // TODO Auto-generated method stub
+        
+    }
+    
+    
 }

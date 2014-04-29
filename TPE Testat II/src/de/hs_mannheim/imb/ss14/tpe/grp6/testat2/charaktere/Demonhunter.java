@@ -1,6 +1,6 @@
 package de.hs_mannheim.imb.ss14.tpe.grp6.testat2.charaktere;
 
-public class Demonhunter extends Nightelf {
+public class Demonhunter extends Nightelf implements Hero,Fighter{
     
     private String name = "Demonhunter" ;
     private Element element = Element.AIR;
@@ -17,7 +17,14 @@ public class Demonhunter extends Nightelf {
         
     }
     
-    public void HeroFight(){
+    @Override
+    public void heroFight(){
+        
+    }
+    
+    @Override
+    public void fight() {
+        // TODO Auto-generated method stub
         
     }
 }
