@@ -1,4 +1,4 @@
-package de.hs_mannheim.imb.ss14.tpe.grp6.testat2;
+package de.hs_mannheim.imb.ss14.tpe.grp6.testat2.charaktere;
 
 public enum Race {
     ORC(150), UNDEAD(70), HUMAN(110), NIGHTELF(145);

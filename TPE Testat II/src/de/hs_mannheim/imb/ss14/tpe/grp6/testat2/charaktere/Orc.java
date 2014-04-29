@@ -1,4 +1,4 @@
-package de.hs_mannheim.imb.ss14.tpe.grp6.testat2;
+package de.hs_mannheim.imb.ss14.tpe.grp6.testat2.charaktere;
 
 public class Orc extends Wesen {
     Race race = Race.ORC;
