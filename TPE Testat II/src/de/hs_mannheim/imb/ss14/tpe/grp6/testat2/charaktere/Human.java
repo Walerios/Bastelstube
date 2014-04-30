@@ -11,11 +11,18 @@ public class Human extends Wesen implements Fighter
     double kosten = 110.0;
     
     @Override
-    public void fight() {
-        // TODO Auto-generated method stub
+    public void fight(Wesen enemy) {
+        damage = this.speed*this.damage*this.raceSpecial;
+        damage = enemy.limitDamage(damage);
+        damage = damage*(1-enemy.armor);
+        enemy.hitpoints = enemy.hitpoints-damage;
         
+        if(enemy.hitpoints<=0){
+            enemy.alive = false;
+        }
     }
     
+    @Override
     public double limitDamage(double damage){
         return damage*((100.0-raceSpecial)/100);
     }

@@ -8,4 +8,9 @@ public abstract class Wesen {
     double speed;
     double raceSpecial;
     double kosten;
+    boolean alive = true;
+
+    public abstract double limitDamage(double damage);
+    
 }
+

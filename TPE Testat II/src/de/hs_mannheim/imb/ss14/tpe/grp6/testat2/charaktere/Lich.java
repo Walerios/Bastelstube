@@ -1,10 +1,11 @@
 package de.hs_mannheim.imb.ss14.tpe.grp6.testat2.charaktere;
 
-public class Lich extends Undead implements Hero,Fighter{
+public class Lich extends Undead implements Hero{
     
     private String name = "Lich" ;
     private Element element = Element.WATER;
     private Element weakness = Element.EARTH;
+    private double bonus = 2.3;
     
     public Lich() {
     
@@ -20,13 +21,31 @@ public class Lich extends Undead implements Hero,Fighter{
     
     
     @Override
-    public void heroFight(){
-        
+    public Element getWeakness(){
+        return weakness;
     }
     
     @Override
-    public void fight() {
-        // TODO Auto-generated method stub
+    public void fight(Wesen enemy) {
+        
+        damage = this.speed*this.damage*this.raceSpecial;
+        damage = damage*this.bonus;
+        damage = enemy.limitDamage(damage);
+        damage = damage*(1-enemy.armor);
+        if (enemy instanceof Hero){
+            Hero enemyHero = (Hero)enemy;
+            if (this.element == enemyHero.getWeakness()){
+                enemy.hitpoints = enemy.hitpoints-(damage*2);
+            } else {
+                enemy.hitpoints = enemy.hitpoints-damage;
+            }
+        } else {
+            enemy.hitpoints = enemy.hitpoints-damage;
+        }
+        
+        if(enemy.hitpoints<=0){
+            enemy.alive = false;
+        }
         
     }
     
