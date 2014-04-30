@@ -6,6 +6,7 @@ public class Demonhunter extends Nightelf implements Hero{
     private Element element = Element.AIR;
     private Element weakness = Element.FIRE;
     private double bonus = 3.0;
+    private int lastAbilityUse = -2;
     
     public Demonhunter() {
     
@@ -14,8 +15,16 @@ public class Demonhunter extends Nightelf implements Hero{
     
     }
     
-    public void goldshot() {
+    public void goldshot(Squad s) {
+        if(lastAbilityUse+3>Counter.getRound){
+            System.out.println("Fähigkeit nocht nicht bereit");
+        } else {
+            for(){
+                
+            }
+        }
         
+            
     }
     
     @Override

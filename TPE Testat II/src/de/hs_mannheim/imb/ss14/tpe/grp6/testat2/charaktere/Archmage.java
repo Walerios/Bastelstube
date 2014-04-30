@@ -16,7 +16,13 @@ public class Archmage extends Human implements Hero {
     }
     
     public void absorb() {
-        
+        if(lastAbilityUse+3>Counter.getRound){
+            System.out.println("Fähigkeit nocht nicht bereit");
+        } else {
+            for(){
+                
+            }
+        }
     }
     
     @Override

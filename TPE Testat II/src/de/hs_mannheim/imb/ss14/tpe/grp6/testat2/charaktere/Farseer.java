@@ -15,7 +15,13 @@ public class Farseer extends Orc implements Hero {
     }
     
     public void doublehit() {
-        
+        if(lastAbilityUse+3>Counter.getRound){
+            System.out.println("Fähigkeit nocht nicht bereit");
+        } else {
+            for(){
+                
+            }
+        }
     }
     
     @Override

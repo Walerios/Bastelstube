@@ -8,7 +8,6 @@ public class Nightelf extends Wesen implements Fighter {
     double armor = 0.2;
     double speed = 3.0;
     double raceSpecial = 2.9;
-    double kosten = 145.0;
     
     @Override
     public void fight(Wesen enemy) {

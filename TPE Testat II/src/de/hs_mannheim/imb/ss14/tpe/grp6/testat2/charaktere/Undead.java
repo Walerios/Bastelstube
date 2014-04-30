@@ -8,7 +8,6 @@ public class Undead extends Wesen implements Fighter {
     double armor = 0.3;
     double speed = 2.0;
     double raceSpecial = 1.6;
-    double kosten = 70.0;
     
     @Override
     public void fight(Wesen enemy) {

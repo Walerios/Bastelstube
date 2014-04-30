@@ -8,7 +8,6 @@ public class Orc extends Wesen implements Fighter {
     double armor = 0.3;
     double speed = 1.0;
     double raceSpecial = 4.0;
-    double kosten = 150.0;
 
     @Override
     public void fight(Wesen enemy) {

@@ -15,7 +15,13 @@ public class Lich extends Undead implements Hero{
     }
     
     public void decay() {
-        
+        if(lastAbilityUse+3>Counter.getRound){
+            System.out.println("Fähigkeit nocht nicht bereit");
+        } else {
+            for(){
+                
+            }
+        }
     }
     
     
