@@ -1,13 +1,15 @@
 package de.hs_mannheim.imb.ss14.tpe.grp6.testat2.charaktere;
 
-public class Orc extends Wesen implements Fighter {
+public class Orc extends Wesen {
     
-    Race race = Race.ORC;
-    public double hitpoints = 100.0;
-    double damage = 33.0;
-    double armor = 0.3;
-    double speed = 1.0;
-    double raceSpecial = 4.0;
+    public Orc(){
+        race = Race.ORC;
+        hitpoints = 100.0;
+        damage = 33.0;
+        armor = 0.3;
+        speed = 1.0;
+        raceSpecial = 4.0;
+    }
 
     @Override
     public void fight(Wesen enemy) {
@@ -25,4 +27,12 @@ public class Orc extends Wesen implements Fighter {
     public double limitDamage(double damage){
         return damage;
     }
+
+    @Override
+    public String toString() {
+        
+        return "Orc("+this.hitpoints+" HP)";
+    }
+    
+    
 }

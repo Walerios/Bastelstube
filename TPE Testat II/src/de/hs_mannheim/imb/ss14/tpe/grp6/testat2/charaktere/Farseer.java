@@ -1,4 +1,5 @@
 package de.hs_mannheim.imb.ss14.tpe.grp6.testat2.charaktere;
+import java.util.*;
 
 public class Farseer extends Orc implements Hero {
     
@@ -6,6 +7,7 @@ public class Farseer extends Orc implements Hero {
     private Element element = Element.EARTH;
     private Element weakness = Element.AIR;
     private double bonus = 1.2;
+    private int lastAbilityUse = -2;
     
     public Farseer() {
     
@@ -14,12 +16,38 @@ public class Farseer extends Orc implements Hero {
     
     }
     
-    public void doublehit() {
-        if(lastAbilityUse+3>Counter.getRound){
+    public void doublehit(int round,Squad s) {
+        if(lastAbilityUse+3>round){
             System.out.println("Fähigkeit nocht nicht bereit");
         } else {
-            for(){
+            int count = 0; 
+            for(Wesen wesen:s.getArray()){
+                if(wesen.alive){
+                    count ++;
+                }
+            }
+            int killCount = 0;
+            if(count >= 2){
                 
+                while (killCount < 2) {
+                    int attackIndex = (int) (Math.random() *
+                            s.getArray().length);
+                    if (s.getArray()[attackIndex].alive) {
+                        (s.getArray()[attackIndex]).alive = false;
+                        killCount++;
+                    }
+                }
+            }else if(count == 1){
+                while (killCount < 1) {
+                    int attackIndex = (int) (Math.random() *
+                            s.getArray().length);
+                    if (s.getArray()[attackIndex].alive) {
+                        (s.getArray()[attackIndex]).alive = false;
+                        killCount++;
+                    }
+                }
+            } else {
+                //Keine Gegener mehr übrig
             }
         }
     }
@@ -51,5 +79,11 @@ public class Farseer extends Orc implements Hero {
             enemy.alive = false;
         }
         
+    }
+    
+    @Override
+    public String toString() {
+        
+        return this.name+"("+this.hitpoints+" HP)";
     }
 }

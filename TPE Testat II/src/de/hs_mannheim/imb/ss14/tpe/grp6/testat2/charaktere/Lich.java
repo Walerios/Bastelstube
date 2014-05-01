@@ -6,6 +6,7 @@ public class Lich extends Undead implements Hero{
     private Element element = Element.WATER;
     private Element weakness = Element.EARTH;
     private double bonus = 2.3;
+    private int lastAbilityUse = -2;
     
     public Lich() {
     
@@ -14,13 +15,22 @@ public class Lich extends Undead implements Hero{
     
     }
     
-    public void decay() {
-        if(lastAbilityUse+3>Counter.getRound){
+    public void decay(int round, Squad s) {
+        if(lastAbilityUse+3>round){
             System.out.println("Fähigkeit nocht nicht bereit");
         } else {
-            for(){
-                
+            double addLife = 0.0;
+            for(Wesen wesen:s.getArray()){
+                if(wesen.alive){
+                    wesen.hitpoints = wesen.hitpoints - 7;
+                    addLife = addLife+7.0;
+                    if(wesen.hitpoints <= 0){
+                        wesen.alive = false;
+                    }
+                }
             }
+            this.hitpoints = hitpoints + addLife;
+            this.lastAbilityUse = round;
         }
     }
     
@@ -55,5 +65,9 @@ public class Lich extends Undead implements Hero{
         
     }
     
-    
+    @Override
+    public String toString() {
+        
+        return this.name+"("+this.hitpoints+" HP)";
+    }
 }

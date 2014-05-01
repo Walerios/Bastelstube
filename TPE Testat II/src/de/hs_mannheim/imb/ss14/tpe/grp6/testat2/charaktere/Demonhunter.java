@@ -15,13 +15,19 @@ public class Demonhunter extends Nightelf implements Hero{
     
     }
     
-    public void goldshot(Squad s) {
-        if(lastAbilityUse+3>Counter.getRound){
+    public void goldshot(int round,Squad s) {
+        if(lastAbilityUse+3>round){
             System.out.println("Fähigkeit nocht nicht bereit");
         } else {
-            for(){
-                
+            for(Wesen wesen:s.getArray()){
+                if(wesen.alive){
+                    wesen.hitpoints = wesen.hitpoints - 25;
+                    if(wesen.hitpoints <= 0){
+                        wesen.alive = false;
+                    }
+                }
             }
+            this.lastAbilityUse = round;
         }
         
             
@@ -54,5 +60,11 @@ public class Demonhunter extends Nightelf implements Hero{
             enemy.alive = false;
         }
         
+    }
+    
+    @Override
+    public String toString() {
+        
+        return this.name+"("+this.hitpoints+" HP)";
     }
 }

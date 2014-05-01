@@ -8,6 +8,10 @@ public class Squad {
         
     }
     
+    public Squad(Wesen[] squad) {
+        this.squad = squad;
+    }
+    
     public Squad(String name, Wesen[] squad) {
         this.name = name;
         this.squad = squad;

@@ -1,13 +1,15 @@
 package de.hs_mannheim.imb.ss14.tpe.grp6.testat2;
 
 public class Counter {
-    private int round =  1;
+    
+    private static int round =  1;
         
-    public void nextRound() {
+    public static void nextRound() {
+        
         round++;
     }
     
-    public int getRound() {
+    public static int getRound() {
         return round;
     }
 }
